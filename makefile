@@ -7,7 +7,7 @@ FILES :=                              \
     Voting.c++                       \
     Voting.h                         \
     Voting.log                       \
-    html                              \
+    html                             \
     RunVoting.c++                    \
     RunVoting.in                     \
     RunVoting.out                    \
