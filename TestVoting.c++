@@ -25,7 +25,7 @@
 using namespace std;
 
 // -----------
-// TestCollatz
+// TestVoting
 // -----------
 
 // ----
