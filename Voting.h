@@ -35,38 +35,12 @@ class Candidate {
             ballots.push_back(b);
             assert(!ballots.empty());
         }
-
-        void print_ballots() {
-            if (ballots.empty()) {
-                cout << "empty k bye" << endl;
-                return;
-            } 
-            string output = "";
-            cout << "[ ";
-            cout.flush();
-            for (vector< vector<int> >::iterator i = ballots.begin(); 
-                i != ballots.end(); ++i) {
-                vector<int> v = *i;
-                assert(!v.empty());
-                cout << "< ";
-                cout.flush();
-                for (vector<int>::iterator  j = v.begin(); j != v.end(); ++j) {
-                    cout << *j << ' ';
-                    cout.flush();
-                }
-                cout << "> " ;
-                cout.flush();
-             }
-             cout << "]" << endl;
-        }
 };
 
 void voting_start(istream& in, ostream& out);
 
 void show_all_winners (vector<Candidate> winners, ostream& out); 
  
-bool winner_exists (map<int, Candidate> candidates, int idx, int votes_to_exceed);
-
 void eliminate_losers (set<int>losers, map<int,Candidate>& candidates);
 
 void compute_winner (int total_votes, map<int,Candidate> candidates, int num_cands, ostream& out); 

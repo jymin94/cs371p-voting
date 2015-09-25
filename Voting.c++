@@ -5,8 +5,8 @@
 // UT EID: jm68529
 
 // James Sweetman
-// CS ID:
-// UT EID:
+// CS ID: sweetman
+// UT EID: jts2939
 // ----------------------------
 
 // --------
@@ -26,6 +26,9 @@
 
 using namespace std;
 
+/*
+    reads in the input and maps the candidates to their votes 
+*/
 void voting_start (istream& in, ostream& out) {
     string s;
     int num_candidates;
@@ -61,15 +64,9 @@ void voting_start (istream& in, ostream& out) {
     compute_winner(total_votes, candidates,num_candidates, out);
 }
 
-void print_map (map<int,Candidate> candidates) {
-    for (map<int, Candidate>::iterator it = candidates.begin(); it != candidates.end(); ++it) {
-        cout << "candidate " << it->first << " ";
-        cout.flush();
-        it->second.print_ballots();
-    } 
-}
-
-
+/*
+    prints out all the winners (for perfect tie)
+*/
 void show_all_winners (int max, map<int,Candidate> candidates, ostream& out) {
    for (map<int,Candidate>::iterator c = candidates.begin(); c != candidates.end(); ++c) {
        if (c->second.get_num_ballots() == max)
@@ -77,10 +74,9 @@ void show_all_winners (int max, map<int,Candidate> candidates, ostream& out) {
    } 
 }
 
-bool winner_exists (map<int, Candidate> candidates, int idx, int votes_to_exceed) {
-    return candidates.at(idx).get_num_ballots() > votes_to_exceed;
-}
-
+/*
+    takes the votes of the losers and reallocates them to corresponding valid candidates' list of ballots
+*/
 void eliminate_losers (set<int>losers, map<int,Candidate>& candidates) {
     for (set<int>::iterator loser = losers.begin(); loser != losers.end(); ++loser) {
         vector< vector<int> > ballots = candidates.at(*loser).get_all_ballots();
@@ -98,7 +94,9 @@ void eliminate_losers (set<int>losers, map<int,Candidate>& candidates) {
     }
 }
 
-
+/* 
+    finds the winner from the given ballots
+*/
 void compute_winner (int total_votes, map<int,Candidate> candidates, int num_cands, ostream& out) {
     set<int> losers;
     int max_votes = 0;
@@ -129,6 +127,8 @@ void compute_winner (int total_votes, map<int,Candidate> candidates, int num_can
             tie_possible = false;
         }
     }
+
+    // If outright winner exists
     if (max_idx != -1 && max_votes > ceil(total_votes / 2)) {
         out << candidates.at(max_idx).get_name() << endl;
         return;
@@ -145,7 +145,6 @@ void compute_winner (int total_votes, map<int,Candidate> candidates, int num_can
         eliminate_losers(losers, candidates);
         compute_winner(total_votes, candidates, num_cands, out);
     }
-    
     return;
 }
 
