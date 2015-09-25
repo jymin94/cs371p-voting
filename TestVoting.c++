@@ -36,9 +36,9 @@ TEST(VotingFixture, show_all_winners_1) {
     map<int, Candidate> candidates;
     Candidate c("James");
     candidates.insert(pair<int, Candidate>(1,c))
-    int max = 0;
+    int max_votes = 0;
     ostringstream w;
-    show_all_winners(max, candidates, w);
+    show_all_winners(max_votes, candidates, w);
     cout << w.str() << endl;
 }
 
