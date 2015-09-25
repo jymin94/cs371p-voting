@@ -1,0 +1,177 @@
+commit ba283adb00d5f5d0dd113283e24d831ffa9ee144
+Merge: 554b0ac 0c04aa0
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 17:31:52 2015 -0500
+
+    Merge branch 'dev'
+
+commit 0c04aa001d8cc0e26e4145c35883562215091356
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 17:30:36 2015 -0500
+
+    Added .gitignore and html/. Fixes #16
+
+commit 554b0acb4721bc69f88039a6afb8c19ce5b33082
+Merge: cd18543 3232e0e
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 17:08:41 2015 -0500
+
+    Merge branch 'dev'
+
+commit 3232e0e671a1a6cbca1fc61435b3dd2829071846
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Sep 25 17:06:45 2015 -0500
+
+    TestVoting.out updated
+
+commit cd1854313f030a2faf81e07ee99d1e8a7275a688
+Merge: 5115bf6 a1c2f94
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 17:06:10 2015 -0500
+
+    Merge branch 'dev'
+
+commit a1c2f9468a109b64aaf90e427686db56304c2ff3
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 17:05:37 2015 -0500
+
+    Added UVaVoting.c++ and fixed one of the comments in TestVoting.c++
+
+commit 06879daf4aed40dce2812333d650d6715bb77202
+Merge: e5fbd82 b8fafe0
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 16:51:30 2015 -0500
+
+    Merge branch 'dev' of https://github.com/jymin94/cs371p-voting into dev
+
+commit e5fbd82fd65110f63f1dfbe1541c014c45ade955
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 16:49:47 2015 -0500
+
+    Fixed the RunVoting files
+
+commit b8fafe053990ec2a6ada306c0f6dc0861c4618a4
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Sep 25 16:44:50 2015 -0500
+
+    updated tests
+
+commit 938d7ef12b9445d320be49ccb4f9dda28e6c5530
+Author: sweetman <sweetman@utexas.edu>
+Date:   Fri Sep 25 16:21:30 2015 -0500
+
+    first test made
+
+commit 5115bf6e47d1895377d56705d28ee80705a19743
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 15:00:43 2015 -0500
+
+    Fixed the .travis.yml file back
+
+commit 5371913394769317a62c3047f362aa9f1cd12038
+Author: sweetman <sweetman@utexas.edu>
+Date:   Fri Sep 25 03:43:39 2015 -0500
+
+    changed show_all_winners params in Voting.h
+
+commit 58c68aded481ffe0e27d87999aecfe2aa35d7945
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Sep 25 03:32:59 2015 -0500
+
+    forgot a semicolon fml
+
+commit 516716442518ad4313e7cbf91e7010f7e267d807
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Sep 25 03:30:52 2015 -0500
+
+    header method params did not match with c++ file
+
+commit 7d35ae9dbfdc5577bee291fea6d79d607030d793
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Sep 25 03:26:03 2015 -0500
+
+    added RunVoting files
+
+commit 898cae55e001b480b9800d148d5140e170e6b1c8
+Author: James Sweetman <sweetman@utexas.edu>
+Date:   Fri Sep 25 03:22:10 2015 -0500
+
+    updated 1st test
+
+commit 06a3aad52b360e9519cdd0d617ee9afe9d436cf1
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 00:31:43 2015 -0500
+
+    Got rid of unnecessary file
+
+commit af9d2ff91fed97a51c0d92277c0a077b0c222a9b
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 00:29:57 2015 -0500
+
+    Added RunVoting.in and RunVoting.out files. Resolves #6
+
+commit fb4382ade1198ae227930c74df9528c6fa722d8c
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Fri Sep 25 00:26:21 2015 -0500
+
+    Added comments. Resolves #3
+
+commit 38613bce6ae7728eba7ba3e4ba878d8c64c5eb4c
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Thu Sep 24 20:28:02 2015 -0500
+
+    Passes on UVAgit status
+
+commit f08b8aba64a83874047ff219831c6a79be136395
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Thu Sep 24 20:03:59 2015 -0500
+
+    All tests passing, I think.. Fixes #2
+
+commit a4b8542671f68a43b5d8bfd3351e346ae6f65b0a
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Thu Sep 24 19:03:21 2015 -0500
+
+    Mostly works..
+
+commit 5a1962240739d79e27f36717f2f6091ceaaea420
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Tue Sep 22 20:15:55 2015 -0500
+
+    Edited the .travis.yml file
+
+commit 61e6e630e51cdda08b343b994b77402f729dfb7b
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Tue Sep 22 20:09:17 2015 -0500
+
+    Got input parsing down
+
+commit c30c1ed6b98043e625c003dbcc54ba136d4aa163
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Sat Sep 19 17:56:23 2015 -0500
+
+    Fixes #1..?
+
+commit f76a8058d2c8437714b2c07a6d10d0c317aea836
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Sat Sep 19 17:54:10 2015 -0500
+
+    Fixes #1
+
+commit 9567079a694812cdbb044cab345f1925507783a7
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Sat Sep 19 17:42:49 2015 -0500
+
+    Fixed the makefile. Fixes #1
+
+commit 79d602fb81f7ce2f5057f0b4fd146caba5ea2686
+Author: JiYoung Min <jymin94@cs.utexas.edu>
+Date:   Sat Sep 19 17:18:30 2015 -0500
+
+    Added .travis.yml and makefile
+
+commit 209e39090a95d18cbb895ea797f7877bef42feed
+Author: JiYoung Min <jymin94@utexas.edu>
+Date:   Sat Sep 19 17:03:37 2015 -0500
+
+    Initial commit
