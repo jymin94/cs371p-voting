@@ -1,0 +1,88 @@
+g++-4.8 -pedantic -std=c++11 -Wall -fprofile-arcs -ftest-coverage Voting.c++ TestVoting.c++ -o TestVoting -lgtest -lgtest_main -pthread
+valgrind ./TestVoting                                       >  TestVoting.tmp 2>&1
+gcov-4.8 -b Voting.c++     | grep -A 5 "File 'Voting.c++'"     >> TestVoting.tmp
+gcov-4.8 -b TestVoting.c++ | grep -A 5 "File 'TestVoting.c++'" >> TestVoting.tmp
+cat TestVoting.tmp
+==8422== Memcheck, a memory error detector
+==8422== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==8422== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==8422== Command: ./TestVoting
+==8422== 
+Running main() from gtest_main.cc
+[==========] Running 24 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 24 tests from VotingFixture
+[ RUN      ] VotingFixture.show_all_winners_1
+[       OK ] VotingFixture.show_all_winners_1 (46 ms)
+[ RUN      ] VotingFixture.show_all_winners_2
+[       OK ] VotingFixture.show_all_winners_2 (5 ms)
+[ RUN      ] VotingFixture.show_all_winners_3
+[       OK ] VotingFixture.show_all_winners_3 (3 ms)
+[ RUN      ] VotingFixture.show_all_winners_4
+[       OK ] VotingFixture.show_all_winners_4 (3 ms)
+[ RUN      ] VotingFixture.show_all_winners_5
+[       OK ] VotingFixture.show_all_winners_5 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_6
+[       OK ] VotingFixture.show_all_winners_6 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_7
+[       OK ] VotingFixture.show_all_winners_7 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_8
+[       OK ] VotingFixture.show_all_winners_8 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_9
+[       OK ] VotingFixture.show_all_winners_9 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_10
+[       OK ] VotingFixture.show_all_winners_10 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_11
+[       OK ] VotingFixture.show_all_winners_11 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_12
+[       OK ] VotingFixture.show_all_winners_12 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_13
+[       OK ] VotingFixture.show_all_winners_13 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_14
+[       OK ] VotingFixture.show_all_winners_14 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_15
+[       OK ] VotingFixture.show_all_winners_15 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_16
+[       OK ] VotingFixture.show_all_winners_16 (3 ms)
+[ RUN      ] VotingFixture.show_all_winners_17
+[       OK ] VotingFixture.show_all_winners_17 (3 ms)
+[ RUN      ] VotingFixture.show_all_winners_18
+[       OK ] VotingFixture.show_all_winners_18 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_19
+[       OK ] VotingFixture.show_all_winners_19 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_20
+[       OK ] VotingFixture.show_all_winners_20 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_21
+[       OK ] VotingFixture.show_all_winners_21 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_22
+[       OK ] VotingFixture.show_all_winners_22 (4 ms)
+[ RUN      ] VotingFixture.show_all_winners_23
+[       OK ] VotingFixture.show_all_winners_23 (3 ms)
+[ RUN      ] VotingFixture.show_all_winners_24
+[       OK ] VotingFixture.show_all_winners_24 (4 ms)
+[----------] 24 tests from VotingFixture (143 ms total)
+
+[----------] Global test environment tear-down
+[==========] 24 tests from 1 test case ran. (172 ms total)
+[  PASSED  ] 24 tests.
+==8422== 
+==8422== HEAP SUMMARY:
+==8422==     in use at exit: 0 bytes in 0 blocks
+==8422==   total heap usage: 691 allocs, 691 frees, 100,165 bytes allocated
+==8422== 
+==8422== All heap blocks were freed -- no leaks are possible
+==8422== 
+==8422== For counts of detected and suppressed errors, rerun with: -v
+==8422== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+File 'Voting.c++'
+Lines executed:7.89% of 76
+Branches executed:8.33% of 168
+Taken at least once:4.76% of 168
+Calls executed:9.52% of 126
+Creating 'Voting.c++.gcov'
+File 'TestVoting.c++'
+Lines executed:100.00% of 193
+Branches executed:80.08% of 964
+Taken at least once:40.04% of 964
+Calls executed:61.74% of 1129
+Creating 'TestVoting.c++.gcov'
