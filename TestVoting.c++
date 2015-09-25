@@ -35,7 +35,7 @@ using namespace std;
 TEST(VotingFixture, show_all_winners_1) {
     map<int, Candidate> candidates;
     Candidate c("James");
-    candidates.insert(pair<int, Candidate>(1,c))
+    candidates.insert(pair<int, Candidate>(1,c));
     int max_votes = 0;
     ostringstream w;
     show_all_winners(max_votes, candidates, w);
