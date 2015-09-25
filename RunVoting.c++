@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include "Voting.h"
+#include <map>
 
 int main () {
     using namespace std;
@@ -12,13 +13,13 @@ int main () {
     sin >> tests;
    
     getline(cin, s); 
-    voting_read(cin, cout);
-   
+    //voting_start(cin, cout);
+     
 
-    /* optimized  
     for (int i = 0; i < tests; i++) {
-        voting_read(cin);
+    //    cout << "calling test case " << i << endl;
+        voting_start(cin, cout);
+        cout << endl;
     }
-    */
     return 0;
 }
