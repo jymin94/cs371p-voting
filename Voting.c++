@@ -21,7 +21,7 @@
 #include <map>
 #include <set>
 #include <climits>
-
+#include <math.h>
 #include "Voting.h"
 
 using namespace std;
@@ -73,6 +73,7 @@ void voting_start (istream& in, ostream& out) {
 //   cout << "calling compute_winner " << endl;
     compute_winner(total_votes, candidates,num_candidates, out);
 //   cout << "came back from compute_winner yey" << endl;
+    out << endl;
 }
 
 void print_map (map<int,Candidate> candidates) {
@@ -84,10 +85,11 @@ void print_map (map<int,Candidate> candidates) {
 }
 
 
-void show_all_winners (map<int,Candidate> candidates, ostream& out) {
+void show_all_winners (int max, map<int,Candidate> candidates, ostream& out) {
    //cout << "calling show_all_winners bc there was a tie" << endl;
    for (map<int,Candidate>::iterator c = candidates.begin(); c != candidates.end(); ++c) {
-        out << c->second.get_name() << endl;
+       if (c->second.get_num_ballots() == max)
+         out << c->second.get_name() << endl;
    } 
 }
 
@@ -99,7 +101,7 @@ bool winner_exists (map<int, Candidate> candidates, int idx, int votes_to_exceed
 void eliminate_losers (set<int>losers, map<int,Candidate>& candidates) {
     for (set<int>::iterator loser = losers.begin(); loser != losers.end(); ++loser) {
         //reallocate the votes
-     //   cout << "eliminating loser at " << *loser << endl;
+     //cout << "eliminating loser at " << *loser << endl;
      //   cout << *loser << endl; 
         vector< vector<int> > ballots = candidates.at(*loser).get_all_ballots();
         for (vector< vector<int> >::iterator b = ballots.begin(); b != ballots.end(); ++b) {
@@ -127,47 +129,37 @@ void compute_winner (int total_votes, map<int,Candidate> candidates, int num_can
     set<int> losers;
     int max_votes = 0;
     int min_votes = INT_MAX;
-    bool tie_possible = total_votes % num_cands == 0;
-   // cout << total_votes << " % " << num_cands << " == 0" << endl;
+    bool tie_possible = true; 
     int max_idx = -1;
     int tie_votes = 0;
 
     for (map<int, Candidate>::iterator it = candidates.begin(); it != candidates.end(); ++it) {
-       //cout << "yo the map ain't like, null" << endl;
-        int votes = it->second.get_num_ballots();
-        if (votes == 0) {
-            candidates.erase(it);
-            num_cands--; 
-            tie_possible = total_votes % num_cands == 0;
-        }   
-       //  cout << it->first << " has " << votes << " votes " << endl;
-        if (votes != 0) {
-            if (votes >= max_votes) {
-                max_votes = votes;
-                max_idx = it->first;
-            }
-            if (votes < min_votes) {
-                min_votes = votes;
-                losers.clear();
-                losers.insert(it->first);
-            }
-            if (votes == min_votes)
-                losers.insert(it->first);
+       int votes = it->second.get_num_ballots();
+       if (votes >= max_votes) {
+            max_votes = votes;
+            max_idx = it->first;
         }
-         
+        if (votes < min_votes) {
+            min_votes = votes;
+            losers.clear();
+            losers.insert(it->first);
+        }
+        else if (votes == min_votes)
+            losers.insert(it->first);
+     
         // Checking for possible perfect tie   
-        if (tie_possible) {
+        //if (tie_possible) {
             // 1 1 1 0 should work ya
             //cout << "tie is possible" << endl;
             if (tie_votes == 0) {
                 tie_votes = votes;
 //                cout << " initialized tie_votes to "<< votes << endl;
             }
-            else if (votes != tie_votes) {
+            else if (votes != 0 && votes != tie_votes) {
                 //cout << "tie fails.." << endl;
                 tie_possible = false;
             }
-        }
+       // }
     }
 /*
     // Find outright winner 
@@ -177,7 +169,7 @@ void compute_winner (int total_votes, map<int,Candidate> candidates, int num_can
     }*/
 
 
-    if (max_idx != -1 && candidates.at(max_idx).get_num_ballots() > (total_votes / 2)) {
+    if (max_idx != -1 && max_votes > ceil(total_votes / 2)) {
       //  cout << candidates.at(max_idx).get_name() << " is the winner! the end..? " << endl;
         out << candidates.at(max_idx).get_name() << endl;
         return;
@@ -185,7 +177,7 @@ void compute_winner (int total_votes, map<int,Candidate> candidates, int num_can
  
     // If perfect tie exists
     if (tie_possible) {
-        show_all_winners(candidates, out);
+        show_all_winners(max_votes, candidates, out);
         return;
     }
 

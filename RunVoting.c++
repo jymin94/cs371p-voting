@@ -19,7 +19,6 @@ int main () {
     for (int i = 0; i < tests; i++) {
     //    cout << "calling test case " << i << endl;
         voting_start(cin, cout);
-        cout << endl;
     }
     return 0;
 }
