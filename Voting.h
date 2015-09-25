@@ -24,8 +24,6 @@ class Candidate {
         }
         
         vector< vector<int> > get_all_ballots () {
-           // cout << "getting all the ballots " << endl;
-           // print_ballots();
             return ballots;
         }
 
@@ -36,13 +34,6 @@ class Candidate {
         void add_ballot (vector<int> b) {
             ballots.push_back(b);
             assert(!ballots.empty());
-          /*
-            for (vector<int>::iterator it=b.begin(); it != b.end(); ++it) {
-                cout << *it << ' ';
-            }
-            cout << endl;
-            cout << "added ballot into " << name << endl;
-         */
         }
 
         void print_ballots() {

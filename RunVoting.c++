@@ -13,12 +13,11 @@ int main () {
     sin >> tests;
    
     getline(cin, s); 
-    //voting_start(cin, cout);
-     
 
     for (int i = 0; i < tests; i++) {
-    //    cout << "calling test case " << i << endl;
         voting_start(cin, cout);
+        if (i != tests - 1)
+            cout << endl;
     }
     return 0;
 }
