@@ -39,39 +39,6 @@ TEST(VotingFixture, show_all_winners_1) {
     int max_votes = 0;
     ostringstream w;
     show_all_winners(max_votes, candidates, w);
-    cout << w.str() << endl;
+    ASSERT_EQ(w.str(), "James\n");
 }
 
-// TEST(VotingFixture, show_all_winners_2) {
-
-// }
-// TEST(VotingFixture, show_all_winners_3) {
-
-// }
-// TEST(VotingFixture, show_all_winners_4) {
-
-// }
-// TEST(VotingFixture, show_all_winners_5) {
-
-// }
-// TEST(VotingFixture, show_all_winners_6) {
-
-// }
-// TEST(VotingFixture, show_all_winners_7) {
-
-// }
-// TEST(VotingFixture, show_all_winners_8) {
-
-// }
-// TEST(VotingFixture, show_all_winners_9) {
-
-// }
-// TEST(VotingFixture, show_all_winners_10) {
-
-// }
-// TEST(VotingFixture, show_all_winners_11) {
-
-// }
-// TEST(VotingFixture, show_all_winners_12) {
-
-// }
