@@ -41,10 +41,10 @@ script:
     - ls -al
     - make voting-tests
     - ls -al
- #   - make html
- #   - ls -al
+    - make html
+    - ls -al
     - make Voting.log
     - ls -al
-#    - make test
-#    - ls -al
-    #- make check
+    - make test
+    - ls -al
+    - make check
