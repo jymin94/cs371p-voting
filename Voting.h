@@ -39,7 +39,7 @@ class Candidate {
 
 void voting_start(istream& in, ostream& out);
 
-void show_all_winners (vector<Candidate> winners, ostream& out); 
+void show_all_winners (int max, map<int, Candidate>  winners, ostream& out); 
  
 void eliminate_losers (set<int>losers, map<int,Candidate>& candidates);
 
